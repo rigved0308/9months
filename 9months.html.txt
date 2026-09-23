@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120d16">
+<meta name="description" content="A little nine-month keepsake made by Riggu for Pigguuu.">
+<title>For Pigguuu — Nine Months</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root{
+  --ink:#241925;
+  --ink-soft:#5c4a5f;
+  --night:#100a12;
+  --night-2:#17101a;
+  --night-3:#211526;
+  --lav:#d9b7e9;
+  --lav-2:#b58ad0;
+  --rose:#efb7aa;
+  --warm:#f7d7ae;
+  --paper:#fffaf4;
+  --paper-2:#f7eee7;
+  --white:#fffaff;
+  --line:rgba(255,255,255,.11);
+  --line-dark:rgba(50,31,54,.12);
+  --shadow:0 28px 100px rgba(0,0,0,.30);
+  --serif:'Cormorant Garamond',serif;
+  --sans:'DM Sans',sans-serif;
+  --display:'Manrope',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--white);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.no-scroll{overflow:hidden}
+button{font:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid rgba(232,201,244,.9);outline-offset:4px}
+
+/* Ambient background */
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- OPENING ---------- */
+.opening{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:22px;background:
+  radial-gradient(circle at 50% 42%,rgba(224,177,230,.17),transparent 23%),
+  radial-gradient(circle at 50% 92%,rgba(248,203,153,.13),transparent 28%),
+  linear-gradient(145deg,#0b070d 0%,#18101a 53%,#0e0910 100%);
+  transition:opacity .9s ease,visibility .9s ease,transform .9s ease;
+}
+.opening.closed{opacity:0;visibility:hidden;transform:scale(1.02);pointer-events:none}
+.opening-inner{width:min(850px,100%);text-align:center;position:relative}
+.lamp{width:220px;height:220px;border-radius:50%;margin:0 auto 30px;position:relative;
+  background:radial-gradient(circle at 37% 32%,#fff8e9 0 4%,#f8dcb3 12%,#d39fc2 30%,rgba(173,113,175,.38) 54%,transparent 72%);
+  box-shadow:0 0 55px rgba(247,208,156,.20),0 0 150px rgba(202,148,224,.12);
+  animation:lampFloat 4.8s ease-in-out infinite;
+}
+.lamp:before{content:"";position:absolute;inset:17%;border:1px solid rgba(255,244,226,.22);border-radius:50%}
+.lamp:after{content:"";position:absolute;left:50%;bottom:-34px;width:1px;height:37px;background:linear-gradient(rgba(255,237,221,.18),transparent);transform:translateX(-50%)}
+.open-kicker{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#c9b3cf;margin-bottom:13px}
+.opening h1{font-family:var(--serif);font-size:clamp(4.5rem,15vw,8.4rem);line-height:.78;font-weight:600;letter-spacing:-.035em}
+.opening h1 em{color:var(--lav);font-style:italic}
+.opening-copy{max-width:600px;margin:22px auto 0;font-family:var(--serif);font-size:clamp(1.35rem,3.8vw,1.75rem);line-height:1.36;color:#d7c9da}
+.open-action{margin-top:30px;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid rgba(245,225,252,.21);background:rgba(255,255,255,.055);color:#fff;border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:.13em;font-size:10px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:.3s ease}
+.open-action:hover{transform:translateY(-2px);border-color:rgba(245,225,252,.42);background:rgba(255,255,255,.09)}
+.open-action .spark{width:7px;height:7px;border-radius:50%;background:#eac8f7;box-shadow:0 0 12px #eac8f7}
+.open-hint{margin-top:15px;font-size:10px;color:#8b7c8f;letter-spacing:.08em}
+
+/* ---------- MAIN ---------- */
+.page{background:
+  radial-gradient(circle at 15% 8%,rgba(186,123,204,.11),transparent 18%),
+  radial-gradient(circle at 88% 24%,rgba(239,168,148,.07),transparent 17%),
+  linear-gradient(180deg,#100a12 0%,#130d16 34%,#110a13 100%);
+}
+.container{width:min(1140px,100%);margin:0 auto;padding:0 24px}
+.section{padding:110px 0}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.30em;color:var(--lav);margin-bottom:16px}
+
+/* ---------- HERO ---------- */
+.hero{min-height:95svh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:90px 18px 80px}
+.hero-orbit{position:absolute;width:min(74vw,680px);height:min(74vw,680px);border:1px solid rgba(214,175,232,.10);border-radius:50%;left:50%;top:49%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-orbit:before,.hero-orbit:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(214,175,232,.07)}
+.hero-orbit:before{inset:12%}.hero-orbit:after{inset:27%}
+.hero-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(207,150,218,.16),transparent 68%);left:50%;top:39%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:790px}
+.hero h2{font-family:var(--serif);font-size:clamp(4.4rem,12vw,8rem);line-height:.76;letter-spacing:-.04em;font-weight:600}
+.hero h2 em{font-style:italic;color:var(--lav)}
+.hero-lede{font-family:var(--serif);font-size:clamp(1.5rem,3.7vw,2rem);line-height:1.35;color:#ded2df;margin:28px auto 0;max-width:700px}
+.hero-small{font-size:13px;line-height:1.85;color:#aa9aaa;max-width:640px;margin:20px auto 0}
+.signature{font-family:var(--serif);font-style:italic;font-size:30px;color:#d7b6e7;margin-top:32px}
+.hero-scroll{margin-top:34px;display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border-radius:999px;border:1px solid rgba(234,211,243,.15);background:rgba(255,255,255,.035);color:#d7ccd9;cursor:pointer;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.hero-scroll .arrow{font-size:15px;color:#e7c8f3}
+
+/* ---------- CONCEPT: 9 LITTLE KEEPSAKES ---------- */
+.keepsakes{position:relative}
+.section-head{max-width:760px;margin:0 auto 42px;text-align:center}
+.section-head h3{font-family:var(--serif);font-size:clamp(3.5rem,8vw,6rem);line-height:.82;font-weight:600}
+.section-head h3 em{color:var(--lav)}
+.section-head p{color:#ab9bad;font-size:14px;line-height:1.8;margin-top:19px}
+.section-count{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:20px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#807182}
+.section-count strong{color:#dcc2e8}
+
+.constellation{position:relative;min-height:610px;border:1px solid rgba(232,212,241,.09);border-radius:34px;padding:42px;background:linear-gradient(155deg,rgba(255,255,255,.047),rgba(255,255,255,.014));box-shadow:var(--shadow);overflow:hidden}
+.constellation:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(196,140,215,.13),transparent 68%);left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.constellation-lines{position:absolute;inset:0;pointer-events:none;opacity:.38}
+.constellation-lines svg{width:100%;height:100%}
+.star{position:absolute;width:18px;height:18px;border:0;border-radius:50%;background:#f3dafb;box-shadow:0 0 0 6px rgba(229,193,242,.07),0 0 25px rgba(231,188,247,.80);cursor:pointer;transition:.3s ease;z-index:3}
+.star:hover{transform:scale(1.25)}
+.star-label{position:absolute;transform:translate(13px,-10px);white-space:nowrap;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#ab98b0;pointer-events:none}
+.s1{left:14%;top:20%}.s2{left:36%;top:11%}.s3{left:64%;top:19%}.s4{left:82%;top:34%}.s5{left:72%;top:60%}.s6{left:49%;top:78%}.s7{left:25%;top:68%}.s8{left:11%;top:48%}.s9{left:49%;top:45%;width:24px;height:24px;background:#ffd7b4;box-shadow:0 0 0 8px rgba(255,199,151,.07),0 0 34px rgba(255,202,160,.95)}
+.s9 .star-label{color:#d7c4db}
+.constellation-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;max-width:260px;z-index:2;pointer-events:none}
+.constellation-center .mini{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#937e98}
+.constellation-center h4{font-family:var(--serif);font-size:3rem;line-height:.88;margin-top:11px}
+.constellation-center p{font-size:12px;line-height:1.6;color:#9f909f;margin-top:10px}
+
+/* Popover */
+.keep-modal{position:fixed;inset:0;z-index:800;display:none;place-items:center;padding:20px;background:rgba(7,4,8,.74);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.keep-modal.open{display:grid}
+.keep-card{width:min(560px,100%);background:linear-gradient(155deg,#291a30,#17101b);border:1px solid rgba(238,214,245,.14);border-radius:28px;box-shadow:0 40px 120px rgba(0,0,0,.42);padding:32px;position:relative}
+.keep-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(238,214,245,.13);background:rgba(255,255,255,.04);color:#e9ddea;cursor:pointer;font-size:18px}
+.keep-number{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#ac91b4}
+.keep-card h4{font-family:var(--serif);font-size:clamp(2.7rem,8vw,4.5rem);line-height:.84;margin-top:15px}
+.keep-card p{font-family:var(--serif);font-size:1.45rem;line-height:1.45;color:#e0d4e1;margin-top:20px}
+.keep-card .tiny{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9d8aa0;margin-top:24px}
+
+/* ---------- LITTLE THINGS / NOTES ---------- */
+.notes{background:linear-gradient(180deg,#17101a 0%,#100a12 100%)}
+.note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.note{min-height:235px;padding:28px 24px;border:1px solid rgba(237,216,245,.10);border-radius:24px;background:linear-gradient(150deg,rgba(255,255,255,.045),rgba(255,255,255,.015));display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 50px rgba(0,0,0,.18);transition:.3s ease}
+.note:hover{transform:translateY(-5px);border-color:rgba(236,210,244,.19)}
+.note .tag{font-size:9px;letter-spacing:.21em;text-transform:uppercase;color:#99839e}
+.note h4{font-family:var(--serif);font-size:2.25rem;line-height:.92;margin-top:18px}
+.note p{font-size:13px;line-height:1.75;color:#bcaebe;margin-top:13px}
+.note .mark{font-family:var(--serif);font-size:1.8rem;color:#dcbde8;align-self:flex-end}
+.note.special{background:linear-gradient(150deg,rgba(214,166,230,.12),rgba(255,205,163,.04));border-color:rgba(229,185,240,.18)}
+
+/* ---------- LETTER ---------- */
+.letter-zone{background:linear-gradient(180deg,#f6ede5 0%,#ead9e7 100%);color:var(--ink);position:relative;overflow:hidden}
+.letter-zone:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;right:-260px;top:-250px;background:radial-gradient(circle,rgba(209,157,213,.25),transparent 70%)}
+.letter-head{max-width:760px;margin:0 auto 38px;text-align:center;position:relative;z-index:2}
+.letter-head .eyebrow{color:#8a7088}
+.letter-head h3{font-family:var(--serif);font-size:clamp(3.5rem,8vw,6.3rem);line-height:.82;color:#4f374e}
+.letter-head p{margin-top:17px;font-size:14px;line-height:1.8;color:#6b5a68}
+.letter-paper{width:min(900px,100%);margin:0 auto;background:var(--paper);box-shadow:0 34px 110px rgba(70,43,68,.17);padding:clamp(32px,6vw,68px);position:relative;border:1px solid rgba(85,55,85,.08);transform:rotate(-.22deg)}
+.letter-paper:before{content:"";position:absolute;inset:14px;border:1px solid rgba(113,77,121,.10);pointer-events:none}
+.letter-paper .stamp{font-size:9px;letter-spacing:.23em;text-transform:uppercase;color:#8e7692;position:relative}
+.letter-paper h4{font-family:var(--serif);font-size:clamp(3.1rem,8vw,5.6rem);line-height:.82;color:#503852;margin:23px 0 28px;position:relative}
+.letter-paper p{font-family:var(--serif);font-size:clamp(1.35rem,3vw,1.76rem);line-height:1.5;color:#524650;margin-top:18px;position:relative}
+.letter-paper p strong{color:#6a3f74}
+.letter-paper .sign{margin-top:32px;font-family:var(--serif);font-style:italic;font-size:1.45rem;color:#704e76;text-align:right;position:relative}
+
+/* ---------- INTERACTIVE REVEAL ---------- */
+.reveal-zone{padding:120px 0 110px;text-align:center;position:relative;overflow:hidden}
+.reveal-zone:before{content:"";position:absolute;inset:auto 0 0;height:70%;background:radial-gradient(circle at 50% 70%,rgba(211,151,217,.16),transparent 64%);pointer-events:none}
+.reveal-box{position:relative;z-index:2;width:min(700px,100%);margin:0 auto}
+.reveal-box h3{font-family:var(--serif);font-size:clamp(3.6rem,8vw,6.5rem);line-height:.82}
+.reveal-box h3 em{color:var(--lav)}
+.reveal-box > p{font-size:14px;line-height:1.8;color:#a998aa;max-width:580px;margin:20px auto 0}
+.reveal-button{margin-top:30px;width:86px;height:86px;border-radius:50%;border:1px solid rgba(233,209,243,.18);background:radial-gradient(circle,rgba(230,200,244,.12),rgba(255,255,255,.035));color:#f2dff7;cursor:pointer;box-shadow:0 0 55px rgba(212,171,232,.14);transition:.35s ease}
+.reveal-button:hover{transform:scale(1.05);box-shadow:0 0 80px rgba(212,171,232,.24)}
+.reveal-button span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.hidden-note{margin:28px auto 0;max-width:650px;min-height:0;opacity:0;transform:translateY(10px);pointer-events:none;transition:.6s ease}
+.hidden-note.show{opacity:1;transform:none;pointer-events:auto}
+.hidden-note p{font-family:var(--serif);font-size:clamp(1.5rem,3.8vw,2.1rem);line-height:1.44;color:#ded0df}
+.hidden-note .mini-sign{margin-top:14px;color:#caa6d9;font-family:var(--serif);font-style:italic;font-size:1.35rem}
+
+/* ---------- FRIDAY ---------- */
+.friday{padding:125px 0 140px;text-align:center;position:relative;overflow:hidden}
+.friday:before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(210,153,219,.17),transparent 67%);left:50%;top:-80px;transform:translateX(-50%);pointer-events:none}
+.friday-inner{position:relative;z-index:2;max-width:820px;margin:0 auto}
+.friday .eyebrow{color:#aa91b0}
+.friday h3{font-family:var(--serif);font-size:clamp(4.6rem,12vw,8rem);line-height:.77}
+.friday h3 em{color:var(--lav)}
+.friday-copy{font-family:var(--serif);font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.45;color:#dcd0de;max-width:680px;margin:26px auto 0}
+.friday-date{display:inline-flex;align-items:center;gap:10px;margin-top:27px;padding:11px 15px;border:1px solid rgba(233,210,243,.12);border-radius:999px;background:rgba(255,255,255,.03);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#bba9bd}
+.friday-date b{color:#e5c8ef;font-weight:500}
+.friday-sign{font-family:var(--serif);font-style:italic;font-size:30px;color:#dcbce7;margin-top:34px}
+.endline{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#6f6273;margin-top:52px}
+
+/* ---------- little controls ---------- */
+.topbar{position:fixed;right:18px;top:18px;z-index:90;display:flex;gap:8px}
+.sound-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(241,217,247,.12);background:rgba(14,9,17,.38);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#e8dbee;cursor:pointer;font-size:15px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:950;padding:11px 15px;border-radius:999px;border:1px solid rgba(241,216,247,.13);background:rgba(25,14,30,.9);color:#e6d9e8;font-size:10px;letter-spacing:.08em;transition:.35s ease;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .container{padding:0 18px}
+  .section{padding:86px 0}
+  .constellation{min-height:540px;padding:28px}
+  .note-grid{grid-template-columns:1fr 1fr}
+  .note:nth-child(2),.note:nth-child(5),.note:nth-child(8){transform:translateY(12px)}
+  .note:hover{transform:none}
+}
+@media(max-width:640px){
+  .container{padding:0 15px}
+  .section{padding:78px 0}
+  .opening{padding:16px}
+  .lamp{width:190px;height:190px;margin-bottom:26px}
+  .opening h1{font-size:clamp(4.5rem,20vw,6.2rem)}
+  .opening-copy{font-size:1.30rem}
+  .open-action{width:100%;max-width:280px;justify-content:center}
+  .hero{min-height:91svh;padding:75px 15px 70px}
+  .hero h2{font-size:clamp(4.2rem,20vw,6rem)}
+  .hero-lede{font-size:1.38rem}
+  .hero-small{font-size:12.5px}
+  .hero-orbit{width:88vw;height:88vw}
+  .hero-glow{width:380px;height:380px}
+  .constellation{min-height:620px;border-radius:27px;padding:20px}
+  .star-label{display:none}
+  .star{width:16px;height:16px}
+  .s1{left:11%;top:18%}.s2{left:32%;top:10%}.s3{left:67%;top:16%}.s4{left:82%;top:31%}.s5{left:71%;top:64%}.s6{left:49%;top:82%}.s7{left:22%;top:70%}.s8{left:9%;top:46%}.s9{left:48%;top:46%;width:23px;height:23px}
+  .constellation-center{max-width:220px}
+  .constellation-center h4{font-size:2.45rem}
+  .constellation-center p{font-size:11px}
+  .note-grid{grid-template-columns:1fr}
+  .note:nth-child(2),.note:nth-child(5),.note:nth-child(8){transform:none}
+  .note{min-height:0;padding:24px 21px}
+  .note h4{font-size:2.25rem}
+  .letter-paper{padding:31px 21px 35px;transform:none}
+  .letter-paper:before{inset:10px}
+  .letter-paper p{font-size:1.38rem}
+  .friday{padding:96px 0 110px}
+  .friday h3{font-size:clamp(4.3rem,21vw,5.9rem)}
+  .friday-copy{font-size:1.40rem}
+  .topbar{right:12px;top:12px}
+  .toast{max-width:calc(100% - 32px);white-space:normal;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;transition:none!important}
+}
+
+@keyframes lampFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+</style>
+</head>
+<body class="no-scroll">
+
+<!-- Opening -->
+<div class="opening" id="opening" aria-modal="true" role="dialog">
+  <div class="opening-inner">
+    <div class="lamp" aria-hidden="true"></div>
+    <div class="open-kicker">A little place made slowly</div>
+    <h1>For <em>Pigguuu.</em></h1>
+    <p class="opening-copy">Come in. There is nothing you need to do here except take your time and read what Riggu couldn't fit into an ordinary message.</p>
+    <button class="open-action" id="openBtn" type="button"><span class="spark"></span> Turn on our little light</button>
+    <div class="open-hint">best opened when you have a quiet minute</div>
+  </div>
+</div>
+
+<div class="topbar" aria-label="Site controls">
+  <button class="sound-btn" id="soundBtn" type="button" aria-label="Play a tiny warm sound" title="Tiny sound">♪</button>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<main class="page">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-orbit" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner container">
+      <div class="eyebrow">22 December 2025 → 22 September 2026</div>
+      <h2>Nine months.<br><em>Still my Pigguuu.</em></h2>
+      <p class="hero-lede">I did not want this one to feel like another anniversary page. So I made it feel more like a place — somewhere small, warm, and completely ours.</p>
+      <p class="hero-small">No photo wall. No long timeline. No trying to make every month look equally important. Just little things I genuinely want you to know, remember, and keep.</p>
+      <div class="signature">— Riggu</div>
+      <button class="hero-scroll" type="button" onclick="document.getElementById('constellation').scrollIntoView({behavior:'smooth'})"><span class="arrow">↓</span> find the little things</button>
+    </div>
+  </section>
+
+  <!-- New main concept -->
+  <section class="section keepsakes" id="constellation">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Not months. Not milestones.</div>
+        <h3>Nine little <em>keepsakes.</em></h3>
+        <p>Tap a glowing point. Each one opens a tiny truth — something from our story that means more to me than a date ever could.</p>
+        <div class="section-count"><strong id="openCount">0</strong> of 9 opened</div>
+      </div>
+
+      <div class="constellation">
+        <div class="constellation-lines" aria-hidden="true">
+          <svg viewBox="0 0 1000 610" preserveAspectRatio="none">
+            <g fill="none" stroke="rgba(222,196,234,.12)" stroke-width="1">
+              <path d="M120 120 L360 70 L650 120 L820 200 L720 385 L500 465 L240 405 L120 280 Z"/>
+              <path d="M360 70 L500 280 L650 120"/>
+              <path d="M120 280 L500 280 L720 385"/>
+              <path d="M240 405 L500 280 L500 465"/>
+            </g>
+          </svg>
+        </div>
+        <div class="constellation-center">
+          <div class="mini">our little constellation</div>
+          <h4>Nothing here is random.</h4>
+          <p>Every point is a small piece of us. Some are loud. Some are quiet. All of them are yours.</p>
+        </div>
+
+        <button class="star s1" data-key="yes" aria-label="Open the yes note"><span class="star-label">the yes</span></button>
+        <button class="star s2" data-key="time" aria-label="Open the time note"><span class="star-label">you made time</span></button>
+        <button class="star s3" data-key="beach" aria-label="Open the beach note"><span class="star-label">that beach</span></button>
+        <button class="star s4" data-key="kiss" aria-label="Open the kiss note"><span class="star-label">our first kiss</span></button>
+        <button class="star s5" data-key="safe" aria-label="Open the safe note"><span class="star-label">safe with you</span></button>
+        <button class="star s6" data-key="care" aria-label="Open the care note"><span class="star-label">you stayed</span></button>
+        <button class="star s7" data-key="bouquet" aria-label="Open the bouquet note"><span class="star-label">that bouquet</span></button>
+        <button class="star s8" data-key="umbrella" aria-label="Open the umbrella note"><span class="star-label">rose petals</span></button>
+        <button class="star s9" data-key="friday" aria-label="Open the Friday note"><span class="star-label">see you Friday</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes -->
+  <section class="section notes" id="notes">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Things I don't want to leave unsaid</div>
+        <h3>Little notes for <em>my Pigguuu.</em></h3>
+        <p>Not a list of what happened. Just a few things I hope you remember even on completely normal days.</p>
+      </div>
+
+      <div class="note-grid">
+        <article class="note"><div><div class="tag">01 · the beginning</div><h4>Thank you for saying yes.</h4><p>Everything we have now came after one tiny answer on 22 December. Sometimes I still think about how much changed because of that one “yes.”</p></div><div class="mark">♡</div></article>
+        <article class="note"><div><div class="tag">02 · exam days</div><h4>You still made time.</h4><p>You had your end-sem exams and your own stress, but you still found little spaces for me. I noticed every one of them.</p></div><div class="mark">⌁</div></article>
+        <article class="note"><div><div class="tag">03 · February</div><h4>Imperfect can still be perfect.</h4><p>The private beach, Valentine's Day, and our first kiss were not some movie scene. They were a little chaotic and completely ours. I wouldn't replace that.</p></div><div class="mark">✦</div></article>
+        <article class="note"><div><div class="tag">04 · March</div><h4>Being close felt safe.</h4><p>Those March days were not just about being together. They were about trust, comfort, attraction, holding each other, kissing, and feeling like we could simply be ourselves.</p></div><div class="mark">☾</div></article>
+        <article class="note"><div><div class="tag">05 · May</div><h4>You looked after me.</h4><p>After my small accident on 9 May, you did not make it bigger than it needed to be. You just cared for me, made me smile, and stayed close.</p></div><div class="mark">♥</div></article>
+        <article class="note special"><div><div class="tag">06 · August</div><h4>I still remember that bouquet.</h4><p>Your first-ever bouquet for me, the little things you brought, the decorated room, the umbrella full of rose petals — those details meant much more than you probably know.</p></div><div class="mark">✿</div></article>
+        <article class="note"><div><div class="tag">07 · the quiet months</div><h4>Ordinary is beautiful too.</h4><p>We do not need a huge event every month for me to feel lucky. Missing you, waiting for you, talking about random things — that is part of us too.</p></div><div class="mark">·</div></article>
+        <article class="note"><div><div class="tag">08 · one honest thing</div><h4>I am still learning you.</h4><p>And I hope I never stop. I want to keep noticing the small things, listening better, and making room for the person you are becoming.</p></div><div class="mark">↗</div></article>
+        <article class="note special"><div><div class="tag">09 · right now</div><h4>See you this Friday.</h4><p>After all these words, this is still my favourite sentence: I get to see you again. Friday cannot come fast enough.</p></div><div class="mark">♡</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apology letter -->
+  <section class="section letter-zone" id="letter">
+    <div class="container">
+      <div class="letter-head">
+        <div class="eyebrow">The part I should have done on time</div>
+        <h3>A real sorry.</h3>
+        <p>I missed wishing you on the 22nd. I know that day mattered, and I know I should have been the person wishing you first.</p>
+      </div>
+
+      <article class="letter-paper">
+        <div class="stamp">For Pigguuu · from Riggu</div>
+        <h4>I am genuinely sorry.</h4>
+        <p>Pigguuu, I know the 22nd mattered. I know I should have wished you on time, and I don't want to hide behind an excuse or pretend it was a small thing just because I am writing this now.</p>
+        <p>You have made time for me even when you were busy, even when exams were stressing you, even when things were not easy. So missing our 9-month date is something I genuinely regret.</p>
+        <p>This website is <strong>not</strong> a replacement for the moment I missed. It is just my honest attempt to say what I should have said that day: <strong>happy 9 months, my Pigguuu.</strong></p>
+        <p>Thank you for every little bit of love that does not make noise. Thank you for the calls, the care, the stupid moments, the soft moments, the arguments, the hugs, the waiting, and all the times you have simply been there.</p>
+        <p><strong>Late by two days, but not late in loving you.</strong></p>
+        <div class="sign">— Riggu ♥</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Reveal -->
+  <section class="reveal-zone" id="reveal">
+    <div class="container">
+      <div class="reveal-box">
+        <div class="eyebrow">one more thing</div>
+        <h3>Tap this when you're<br><em>done reading.</em></h3>
+        <p>I kept one little note hidden because some things feel nicer when you discover them instead of being told that they're coming.</p>
+        <button class="reveal-button" id="revealBtn" type="button" aria-expanded="false"><span>tap me</span></button>
+        <div class="hidden-note" id="hiddenNote" aria-hidden="true">
+          <p>Whatever this next year gives us — busy days, long-distance days, silly days, difficult days, or days when everything is just normal — I still want my favourite place to be wherever you are.</p>
+          <div class="mini-sign">and yes… I am still choosing you. — Riggu</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Friday ending -->
+  <section class="friday">
+    <div class="container">
+      <div class="friday-inner">
+        <div class="eyebrow">And now, the part I'm actually excited about</div>
+        <h3>See you<br><em>this Friday.</em></h3>
+        <p class="friday-copy">No long letter. No big speech. Just me being very happy that after all these months, I get to see my Pigguuu again.</p>
+        <div class="friday-date"><span>Friday ·</span> <b>25 September 2026</b></div>
+        <div class="friday-sign">Come here soon, okay? ♥</div>
+        <div class="endline">Nine months · one little place · still us</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Keepsake modal -->
+<div class="keep-modal" id="keepModal" role="dialog" aria-modal="true" aria-labelledby="keepTitle">
+  <div class="keep-card">
+    <button class="keep-close" id="keepClose" type="button" aria-label="Close note">×</button>
+    <div class="keep-number" id="keepNumber">little thing</div>
+    <h4 id="keepTitle">The yes.</h4>
+    <p id="keepText">You only need one sentence to change everything.</p>
+    <div class="tiny" id="keepFoot">22 December 2025</div>
+  </div>
+</div>
+
+<script>
+const opening = document.getElementById('opening');
+const openBtn = document.getElementById('openBtn');
+const toast = document.getElementById('toast');
+
+function closeOpening(){
+  opening.classList.add('closed');
+  document.body.classList.remove('no-scroll');
+  setTimeout(()=>{ opening.setAttribute('aria-hidden','true'); },900);
+}
+openBtn.addEventListener('click',()=>{
+  closeOpening();
+  showToast('Welcome in, Pigguuu. ♡');
+});
+
+function showToast(message){
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(showToast.t);
+  showToast.t = setTimeout(()=>toast.classList.remove('show'),2600);
+}
+
+const keepsakes = {
+  yes:{n:'01 · the beginning',title:'The yes.',text:'19–21 December was when we met at Campal. Then on 22 December came the question: “Will you be mine?” And your yes quietly became the beginning of everything.',foot:'22 December 2025'},
+  time:{n:'02 · the little effort',title:'You made time.',text:'January had your end-sem exams and your own pressure. You still found little spaces for me. I remember that because effort feels different when it happens while someone is busy.',foot:'January 2026'},
+  beach:{n:'03 · the soft place',title:'That beach.',text:'13–15 February. A private beach, Valentine’s Day, and a day that made the distance feel smaller for a while.',foot:'13–15 February 2026'},
+  kiss:{n:'04 · imperfectly ours',title:'Our first kiss.',text:'It was not perfectly timed. There were people, interruptions, and all the awkwardness that real life gives you. Somehow that made it more ours, not less.',foot:'February 2026'},
+  safe:{n:'05 · March',title:'Safe with you.',text:'14–17 March at Adilson Guest House. Being held, kissing, sharing private moments, trusting each other, and feeling comfortable enough to just be real.',foot:'14–17 March 2026'},
+  care:{n:'06 · May',title:'You stayed.',text:'On 9 May, after my small accident, you took care of me properly and somehow still found a way to make me smile. I remember that kind of care.',foot:'8–11 May 2026'},
+  bouquet:{n:'07 · August',title:'That bouquet.',text:'You gave me my first-ever bouquet. Along with the Hot Wheels, new T-shirt, little jar of things, your card, and all the effort you put into those days — that trip lives somewhere soft in my heart.',foot:'14–16 August 2026'},
+  umbrella:{n:'08 · a room full of petals',title:'The umbrella.',text:'I went to decorate the room secretly. Then came the bouquet, the umbrella filled with rose petals, “close your eyes,” and your reaction. I wanted that moment to stay exactly as it was.',foot:'August 2026'},
+  friday:{n:'09 · right now',title:'See you this Friday.',text:'After nine months, this is the simplest thing I know: I am excited to see you. That is enough. No grand ending needed.',foot:'25 September 2026'}
+};
+
+const modal = document.getElementById('keepModal');
+const close = document.getElementById('keepClose');
+const title = document.getElementById('keepTitle');
+const text = document.getElementById('keepText');
+const number = document.getElementById('keepNumber');
+const foot = document.getElementById('keepFoot');
+const count = document.getElementById('openCount');
+let opened = new Set();
+
+document.querySelectorAll('.star').forEach(star=>{
+  star.addEventListener('click',()=>{
+    const data = keepsakes[star.dataset.key];
+    if(!data) return;
+    opened.add(star.dataset.key);
+    count.textContent = opened.size;
+    number.textContent = data.n;
+    title.textContent = data.title;
+    text.textContent = data.text;
+    foot.textContent = data.foot;
+    modal.classList.add('open');
+    document.body.classList.add('no-scroll');
+  });
+});
+
+function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('no-scroll'); }
+close.addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeOpening(); closeModal(); } });
+
+const revealBtn = document.getElementById('revealBtn');
+const hiddenNote = document.getElementById('hiddenNote');
+revealBtn.addEventListener('click',()=>{
+  const show = !hiddenNote.classList.contains('show');
+  hiddenNote.classList.toggle('show',show);
+  hiddenNote.setAttribute('aria-hidden',String(!show));
+  revealBtn.setAttribute('aria-expanded',String(show));
+  revealBtn.querySelector('span').textContent = show ? 'got it ♥' : 'tap me';
+});
+
+/* tiny warm sound — only after user taps */
+let audioCtx = null;
+const soundBtn = document.getElementById('soundBtn');
+soundBtn.addEventListener('click',()=>{
+  try{
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const now = audioCtx.currentTime;
+    const notes = [392,523.25,659.25];
+    notes.forEach((freq,i)=>{
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type='sine';
+      osc.frequency.value=freq;
+      gain.gain.setValueAtTime(0,now+i*.11);
+      gain.gain.linearRampToValueAtTime(.035,now+i*.11+.02);
+      gain.gain.exponentialRampToValueAtTime(.001,now+i*.11+.55);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start(now+i*.11);
+      osc.stop(now+i*.11+.58);
+    });
+    showToast('A tiny sound for our tiny place.');
+  }catch(e){ showToast('Sound is not available on this device.'); }
+});
+</script>
+</body>
+</html>
